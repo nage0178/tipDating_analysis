@@ -67,7 +67,7 @@ int main (int argc, char **argv) {
 	double tau_root, tau_AB, tau_CD, mu; 
 
 	double ** samples; 
-	long int reps = 1000;
+	long int reps = 5000;
 
 	samples = malloc(sizeof(double *) * 11);
 	/* Mu, theta_a, theta_b, coal_a, coal_b*/

@@ -5,7 +5,7 @@
 
 awk '{print "((A #"$6" ,B #"$7"):"$4" # "$10",(C #"$8",D #"$9"):"$5" #"$11"):"$3" # "$12";"}' parameters.txt > trees.txt
 
-maxReps=250
+maxReps=3000
 for ((reps=1;reps<=${maxReps};reps++));
 do 
 	
