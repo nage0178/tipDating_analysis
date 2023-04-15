@@ -3,7 +3,8 @@
 
 ./drawDatesPop
 
-maxReps=2
+maxReps=20
+seed=1
 for ((reps=1;reps<=${maxReps};reps++));
 do 
 
@@ -25,7 +26,7 @@ do
 
 			# Simulation files
 			cd ${reps}_${theta}_1
-			sed "s/seed = 1/seed = ${reps}/g" ../../../simulate.ctl > simulate.ctl
+			sed "s/seed = 1/seed = ${seed}/g" ../../../simulate.ctl > simulate.ctl
 			sed -i "s/loci = 1/loci = ${loci}/g" simulate.ctl
 			sed -i "s/dates.txt/..\/..\/datesSub_${reps}.txt/g" simulate.ctl
 
@@ -43,10 +44,14 @@ do
 
 			# Inference files
 			sed "s/loci = 1/loci = ${loci}/g" ../../inference.ctl > inference.ctl
+			sed -i "s/seed = 1/seed = ${seed}/g" inference.ctl 
+
+			seedOld=$(echo ${seed})
+			((seed=seed+1))
 
 			# Inference files run2
 			cd ../${reps}_${theta}_2
-			sed "s/seed = 1/seed = 2/g" ../${name}/inference.ctl > inference.ctl
+			sed "s/seed = ${seedOld}/seed = ${seed}/g" ../${name}/inference.ctl > inference.ctl
 			sed -i "s/simple.Imap.txt/..\/${name}\/simple.Imap.txt/g" inference.ctl
 			sed -i "s/simulate.txt/..\/${name}\/simulate.txt/g" inference.ctl
 			sed -i "s/realTimeDates.txt/..\/${name}\/realTimeDates.txt/g" inference.ctl
@@ -57,6 +62,8 @@ do
 
 				sed -i "s/thetaprior = gamma 2 20000/thetaprior = gamma 2 200000/g" inference.ctl
 			fi
+
+			seedOld=$(echo ${seed})
 
 			cd ../
 		done

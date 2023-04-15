@@ -1,7 +1,7 @@
 #!/bin/bash
 
-
-maxReps=2
+seed=1
+maxReps=20
 for tree in oneExtinct twoExtinct
 do
 
@@ -35,7 +35,7 @@ do
 				cd ${reps}_${theta}_1
 				name=$(echo ${reps}_${theta}_1)
 
-				sed "s/seed = 1/seed = ${reps}/g" ../../../../simulateMt.ctl > simulate.ctl
+				sed "s/seed = 1/seed = ${seed}/g" ../../../../simulateMt.ctl > simulate.ctl
 				sed -i "s/dates.txt/..\/..\/..\/datesSubMt_${dir}_${reps}.txt/g" simulate.ctl
 				sed -i "s/length = 1000 1000/length = 1 18000/g" simulate.ctl
 	
@@ -46,21 +46,27 @@ do
 
 				# Inference files
 				cp ../../../../inferenceMt.ctl inference.ctl
+				sed -i "s/seed = 1/seed = ${seed}/g" inference.ctl 
 
 
 				if [ "$theta" == "0.0001" ];
 				then
 	
-					sed -i "s/thetaprior = gamma 2.5 10000/thetaprior = gamma 2.5 100000/g" inference.ctl
+					sed -i "s/thetaprior = gamma 2.5 1000/thetaprior = gamma 2.5 10000/g" inference.ctl
 				fi
 
 				# Inference files run2
 				cd ../${reps}_${theta}_2
 
-				sed "s/seed = 1/seed = 2/g" ../${name}/inference.ctl > inference.ctl
+				seedOld=$(echo ${seed})
+				((seed=seed+1))
+
+				sed "s/seed = ${seedOld}/seed = ${seed}/g" ../${name}/inference.ctl > inference.ctl
 				sed -i "s/simple.Imap.txt/..\/${name}\/simple.Imap.txt/g" inference.ctl
 				sed -i "s/simulate.txt/..\/${name}\/simulate.txt/g" inference.ctl
 				sed -i "s/realTimeDates.txt/..\/${name}\/realTimeDates.txt/g" inference.ctl
+				((seed=seed+1))
+
 				cd ../
 			done
 		done

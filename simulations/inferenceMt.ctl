@@ -28,7 +28,7 @@ clock = 1
 # invgamma(a, b) for root tau & Dirichlet(a) for other tau's
 tauprior = gamma 10  1000
 
-thetaprior = gamma 2.5 10000 # gamma(a, b) for theta (estimate theta)
+thetaprior = gamma 2.5 1000 # gamma(a, b) for theta (estimate theta)
 
 locusrate = 3 10 1000000000
 

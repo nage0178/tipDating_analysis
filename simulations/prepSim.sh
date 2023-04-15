@@ -1,6 +1,7 @@
 #!/bin/bash
 
-maxReps=2
+seed=1
+maxReps=20
 for tree in oneExtinct twoExtinct
 do
 
@@ -38,7 +39,7 @@ do
 					# Simulation files
 					cd ${reps}_1
 
-					sed "s/seed = 1/seed = ${reps}/g" ../../../../simulate.ctl > simulate.ctl
+					sed "s/seed = 1/seed = ${seed}/g" ../../../../simulate.ctl > simulate.ctl
 					sed -i "s/loci = 1/loci = ${loci}/g" simulate.ctl
 					sed -i "s/dates.txt/..\/..\/..\/datesSub_${dir}_${reps}.txt/g" simulate.ctl
 
@@ -55,11 +56,15 @@ do
 	
 					# Inference files
 					sed "s/loci = 1/loci = ${loci}/g" ../../../../inference.ctl > inference.ctl
+					sed -i "s/seed = 1/seed = ${seed}/g" inference.ctl 
 	
 					# Inference files run2
 					cd ../${reps}_2
 
-					sed "s/seed = 1/seed = 2/g" ../${reps}_1/inference.ctl > inference.ctl
+					seedOld=$(echo ${seed})
+					((seed=seed+1))
+
+					sed "s/seed = ${seedOld}/seed = ${seed}/g" ../${reps}_1/inference.ctl > inference.ctl
 					sed -i "s/simple.Imap.txt/..\/${reps}_1\/simple.Imap.txt/g" inference.ctl
 					sed -i "s/simulate.txt/..\/${reps}_1\/simulate.txt/g" inference.ctl
 					sed -i "s/realTimeDates.txt/..\/${reps}_1\/realTimeDates.txt/g" inference.ctl
@@ -69,6 +74,8 @@ do
 	
 						sed -i "s/thetaprior = gamma 2 20000/thetaprior = gamma 2 200000/g" inference.ctl
 					fi
+
+					 ((seed=seed+1))
 
 					cd ../
 				done
