@@ -38,6 +38,12 @@ do
 				sed "s/seed = 1/seed = ${seed}/g" ../../../../simulateMt.ctl > simulate.ctl
 				sed -i "s/dates.txt/..\/..\/..\/datesSubMt_${dir}_${reps}.txt/g" simulate.ctl
 				sed -i "s/length = 1000 1000/length = 1 18000/g" simulate.ctl
+
+				if [ "$theta" == "0.0001" ];
+				then
+
+					sed -i "s/\.0025/\.00025/g" simulate.ctl
+				fi
 	
 				~/bpp/src/bpp --simulate simulate.ctl  &> simOutput 
 	
