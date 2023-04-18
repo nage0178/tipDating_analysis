@@ -21,20 +21,20 @@ do
 	for dir in 10000 50000
 	do
 	
-		mkdir $dir
+		mkdir -p  $dir
 		cd $dir 
 	
 		for loci in 10 100 500
 		do 
 			for theta in 0.001 0.0001
 			do
-				mkdir ${loci}_${theta}
+				mkdir -p ${loci}_${theta}
 				cd ${loci}_${theta}
 	
 				for ((reps=1;reps<=${maxReps};reps++));
 				do 
-					mkdir ${reps}_1
-					mkdir ${reps}_2
+					mkdir -p ${reps}_1
+					mkdir -p ${reps}_2
 	
 					# Simulation files
 					cd ${reps}_1
@@ -58,6 +58,12 @@ do
 					sed "s/loci = 1/loci = ${loci}/g" ../../../../inference.ctl > inference.ctl
 					sed -i "s/seed = 1/seed = ${seed}/g" inference.ctl 
 	
+					if [ "$theta" == "0.0001" ];
+					then
+	
+						sed -i "s/thetaprior = gamma 2 2000/thetaprior = gamma 2 20000/g" inference.ctl
+					fi
+
 					# Inference files run2
 					cd ../${reps}_2
 
@@ -69,11 +75,6 @@ do
 					sed -i "s/simulate.txt/..\/${reps}_1\/simulate.txt/g" inference.ctl
 					sed -i "s/realTimeDates.txt/..\/${reps}_1\/realTimeDates.txt/g" inference.ctl
 
-					if [ "$theta" == "0.0001" ];
-					then
-	
-						sed -i "s/thetaprior = gamma 2 20000/thetaprior = gamma 2 200000/g" inference.ctl
-					fi
 
 					 ((seed=seed+1))
 

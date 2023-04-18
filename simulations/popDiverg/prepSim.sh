@@ -49,6 +49,13 @@ do
 			seedOld=$(echo ${seed})
 			((seed=seed+1))
 
+			# Change theta prior
+			if [ "$theta" == "0.0001" ];
+			then
+
+				sed -i "s/thetaprior = gamma 2 2000/thetaprior = gamma 2 20000/g" inference.ctl
+			fi
+
 			# Inference files run2
 			cd ../${reps}_${theta}_2
 			sed "s/seed = ${seedOld}/seed = ${seed}/g" ../${name}/inference.ctl > inference.ctl
@@ -56,12 +63,6 @@ do
 			sed -i "s/simulate.txt/..\/${name}\/simulate.txt/g" inference.ctl
 			sed -i "s/realTimeDates.txt/..\/${name}\/realTimeDates.txt/g" inference.ctl
 
-			# Change theta prior
-			if [ "$theta" == "0.0001" ];
-			then
-
-				sed -i "s/thetaprior = gamma 2 20000/thetaprior = gamma 2 200000/g" inference.ctl
-			fi
 
 			seedOld=$(echo ${seed})
 
