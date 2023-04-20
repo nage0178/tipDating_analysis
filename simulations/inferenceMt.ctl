@@ -13,7 +13,7 @@ speciesdelimitation = 0
 
 
 species&tree = 4  A B C D
-                  10  10 10 10 
+                  10 10 10 10 
 		  ((A, B), (C, D));
 
 # phased data for population

@@ -5,7 +5,7 @@
 maxReps=20
 mkdir popDiverge
 cd  popDiverge
-for loci in 10 100 500
+for loci in 10 100 500 2000
 do 
 	mkdir $loci
 	cd $loci

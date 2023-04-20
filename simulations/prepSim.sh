@@ -24,7 +24,7 @@ do
 		mkdir -p  $dir
 		cd $dir 
 	
-		for loci in 10 100 500
+		for loci in 10 100 500 2000
 		do 
 			for theta in 0.001 0.0001
 			do

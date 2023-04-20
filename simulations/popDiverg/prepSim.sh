@@ -11,7 +11,7 @@ do
 	Rscript ../../Bayesian_sim/convertDates.R dates_${reps}.txt datesSub_${reps}.txt .000000001
 done
 
-for loci in 10 100 500
+for loci in 10 100 500 2000
 do 
 	mkdir $loci
 	cd $loci
@@ -26,7 +26,7 @@ do
 
 			# Simulation files
 			cd ${reps}_${theta}_1
-			sed "s/seed = 1/seed = ${seed}/g" ../../../simulate.ctl > simulate.ctl
+			sed "s/seed = 1/seed = ${seed}/g" ../../simulate.ctl > simulate.ctl
 			sed -i "s/loci = 1/loci = ${loci}/g" simulate.ctl
 			sed -i "s/dates.txt/..\/..\/datesSub_${reps}.txt/g" simulate.ctl
 
