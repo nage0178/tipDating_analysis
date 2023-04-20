@@ -19,7 +19,7 @@ species&tree = 4  A B C D
 phase =   0 0 0 0
 
 
-loci&length = 500 1000
+loci&length = 2000 1000
 clock = 1
 locusrate =0
 model = 0
