@@ -16,7 +16,7 @@ int main (int argc, char **argv) {
 	T = gsl_rng_default;
 	r = gsl_rng_alloc(T);
  
-	gsl_rng_set(r, 1);
+	gsl_rng_set(r, 10);
 
 	int reps = 20, ind = 10, ind2 =20;
 	double time;
