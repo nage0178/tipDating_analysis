@@ -81,7 +81,7 @@ do
 					sed -i "s/thetaprior = gamma 2.5 1000/thetaprior = gamma 2.5 10000/g" inference.ctl
 				fi
 				
-				if [ "$seq" == "20" ];
+				if [ "$seq" == "100" ];
 				then
 					if [ "$tree" == "oneExtinct" ];
 					then
