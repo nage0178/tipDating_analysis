@@ -18,7 +18,7 @@ do
 		for ((reps=1;reps<=${maxReps};reps++));
 		do
 
-			for seq in 10 20
+			for seq in 100 10 20
 			do
 
 			for theta in 0.001 0.0001
