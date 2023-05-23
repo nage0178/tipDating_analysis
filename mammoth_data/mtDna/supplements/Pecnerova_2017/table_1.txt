@@ -1,0 +1,43 @@
+Lab ID	14C Lab no.	14C BP date ± error	Median CalBP	Material	Location	Endogenous DNA (%)	Average fragment length (bp)	Accession no.	Reference	Average Coverage	Haplotype
+E469D	Ua‐13366	3685 ± 60	4024	Tooth	Wrangel Island	29.59	64.6	MG334270	This study	9.5	W7
+E468	LU‐2741	3730 ± 40	4079	Tusk	Wrangel Island	16.23	101.5	MG334269	This study	31.9	W1
+E467	AA40665	3905 ± 47	4336	Tooth	Wrangel Island	80.35	81.9	MG334268	This study	11.7	W1
+E466	GIN‐6985	3920 ± 40	4354	Tusk	Wrangel Island	17.68	88.9	MG334267	This study	8.8	W6
+E465	LU‐4448	4120 ± 110	4643	Tusk	Wrangel Island	12.23	98.8	MG334266	This study	38.2	W5
+E464	Ua‐13375	4210 ± 70	4726	Tooth	Wrangel Island	70.55	84.2	MG334265	This study	21.8	W1
+E460	LU‐2756	4400 ± 40	4969	Tusk	Wrangel Island	87.13	90.1	MG334264	This study	39.0	W4
+M28	GIN‐6988	5610 ± 40	6380	Tusk	Wrangel Island	56.59	151.6	MG334281	This study	276.7	W4
+L459	OxA‐30117*	6148 ± 32	7060	Tusk	Wrangel Island	0.47	77.8	MG334276	This study	5.5	W4
+M26	LU‐2799	6260 ± 50	7194	Tooth	Wrangel Island	27.69	71.2	MG334280	This study	25.8	W3
+L386	Ua‐13374	6410 ± 90	7336	Tooth	Wrangel Island	82.37	73.0	MG334274	This study	12.0	W4
+M23	LU‐4449	6560 ± 60	7470	Tusk	Wrangel Island	75.85	111.5	MG334279	This study	170.9	W2
+M17	Ua‐13372	7510 ± 80	8318	Tooth	Wrangel Island	68.16	71.2	MG334278	This study	27.2	W1
+L468	OxA‐30122*	7711 ± 36	8491	Bone	Wrangel Island	15.30	70.8	MG334277	This study	7.8	W1
+P011	GrA‐ 65691*	10,240 ± 50	11972	Tusk	Taimyr Peninsula	2.11	66.6	MG334285	This study	5.5	S5
+P005	GrA‐ 65686*	10,920 ± 50	12775	Tusk	New Siberian Islands	91.70	75.7	MG334283	This study	10.8	S3
+Ber28	UCIAMS38670	12,125 ± 30	14011	n.a.	Berelekh	n.a.	n.a.	KX027495	Enk et al. 2016 	S24
+Krause	KIA‐25289	12,170 ± 50	14056	Bone	Yakutia	n.a.	n.a.	DQ188829	Krause et al. 2006 	S22
+L410	OxA‐31180*	12,370 ± 55	14408	Tooth	Wrangel Island	29.31	80.0	MG334275	This study	6.8	W9
+L158	OxA‐20046	12,380 ± 45	14431	Humerus	Pioneyveem River, Chukotka	47.91	76.7	MG334272	This study	17.7	S1
+P009	GrA‐65689*	13,030 ± 60	15602	Tusk	New Siberian Islands	82.40	67	MG334284	This study	6.8	S4
+L164	OxA‐20048	13,935 ± 50	16901	tusk	Pioneyveem River, Chukotka	85.92	83.9	MG334273	This study	9.8	S2
+GilbertM15	OxA‐19605	13,995 ± 55	16996	Hair	Ayon Island, Chukotka	n.a.	n.a.	EU153446	Gilbert et al. 2008 	S13
+GilbertM18	OxA‐17116	17,125 ± 70	20655	Hair	Gydan Peninsula	n.a.	n.a.	EU153447	Gilbert et al. 2007 	S14
+GilbertM4	OxA‐17098	18,545 ± 70	22422	Hair	n.a.	n.a.	n.a.	EU153456	Gilbert et al. 2007 	S9
+GilbertM19	GrN‐28258	18,560 ± 50	22434	Hair	Yakutia	n.a.	n.a.	EU153448	Gilbert et al. 2008 	S9
+GilbertM2	UtC‐8138	20,380 ± 140	24507	Hair	Taimyr Peninsula	n.a.	n.a.	EU153449	Gilbert et al. 2007 	S7
+GilbertM3	Beta‐148647	20,620 ± 70	24833	Hair	Taimyr Peninsula	n.a.	n.a.	EU153455	Gilbert et al. 2007 	S8
+GilbertM26	OxA‐17114	24,740 ± 110	28769	Hair	Indigirka	n.a.	n.a.	EU153454	Gilbert et al. 2007 	S19
+Poinar	Beta‐210777	27,740 ± 220	31501	Bone	Taimyr Peninsula	n.a.	n.a.	EU155210	Poinar et al. 2006 	S20
+GilbertM13	T‐171	35,800 ± 1200	40418	Hair	Lena River	n.a.	n.a.	EU153445	Gilbert et al. 2007 	S12
+E470	LU‐3511	37,080 ± 1650	41632	Bone	Wrangel Island	31.72	73.4	MG334271	This study	11.5	W8
+Oimyakon	GrA‐30727	41,300 ± 900	44828	Skin	Yakutia	n.a.	n.a.	MG334282	Palkopoulou et al. 2015 	S23
+GilbertM8	OxA‐17102	46,900 ± 700	46962	Hair	Magadan	n.a.	n.a.	EU153458	Gilbert et al. 2007 	S11
+GilbertM22	OxA‐17111	50,200 ± 900	50304	Hair	New Siberian Islands	n.a.	n.a.	EU153452	Gilbert et al. 2007 	S17
+GilbertM25	OxA‐19610	59,300 ± 2700	60495	Hair	Yakutia	n.a.	n.a.	EU153453	Gilbert et al. 2008 	S18
+GilbertM1	n.a.	n.a.	n.a.	Hair	n.a.	n.a.	n.a.	EU153444	Gilbert et al. 2007 	S6
+GilbertM5	n.a.	n.a.	n.a.	Hair	n.a.	n.a.	n.a.	EU153457	Gilbert et al. 2007 	S10
+GilbertM20	OxA‐19608	>63,500	n.a.	Hair	New Siberian Islands	n.a.	n.a.	EU153450	Gilbert et al. 2008 	S15
+GilbertM21	OxA‐19609	>58,000	n.a.	Hair	New Siberian Islands	n.a.	n.a.	EU153451	Gilbert et al. 2008 	S16
+Rogaev	MAG‐1000	33,750—31,950	n.a.	Muscle	Enmynveem River, Chukotka	n.a.	n.a.	DQ316067	Rogaev et al. 2006 	S21
+2002/472	UCIAMS38677	>48,800	n.a.	n.a.	Taimyr Peninsula	n.a.	n.a.	KX027489	Enk et al. 2016 	S25

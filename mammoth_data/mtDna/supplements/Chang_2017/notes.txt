@@ -1,0 +1,14 @@
+Table 1.
+These are all Mammuthus primigenius, woolly mammoths.
+PopSet: 1098386028
+
+Table 2.
+These are all Mammuthus primigenius, woolly mammoths.
+PopSet: 1098386028
+
+Table 3.
+Debruyne et al 2008 has GenBank accession numbers, note many of these samples were resequenced later. The reference is for the age
+FJ015093–FJ015152
+
+Enk. 2016 has genBank accession numbers
+KX027489-KX027568, some of these have species and some of them do not.

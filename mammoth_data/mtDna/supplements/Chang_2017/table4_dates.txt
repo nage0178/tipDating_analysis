@@ -1,0 +1,18 @@
+ID,Region,Location,Museum Number,Latitude,Longitude,Radiocarbon Number,14C date,Sigma,intCal13 Median,GenBank Accession Reference
+M13,Russia,Adams mammoth; Lena Delta N-E Siberia,,72.50,127.50,,35800,1200,40418,EU153445,Gilbert et al. 2007
+M15,Russia,Ayon Island Russia,,69.80,169.00,OxA 19605,13995,55,16996,EU153446,Gilbert et al. 2008
+M18,Russia,Gydan Peninsula Taimyr West Siberia,KOS-W-1,72.09,79.35,OxA 17116,17125,70,20655,EU153447,Gilbert et al. 2007
+M19,Russia,Yukagir Village Yakutsk Russia,,71.87,140.58,GrN 28258 GrN 28259 GrN 24288,18560,50,22434,EU153448,Gilbert et al. 2008
+M1,Russia,unknown; possibly Northern Yakutia (about 66 to 76N 106-160E),,,,,,,,EU153444,Gilbert et al. 2007
+M20,Russia,Bolshoy Lyakhovsk(i)y Isl.,LDR-P72,73.64,142.89,OxA 19608,63500,infinite,,EU153450,Gilbert et al. 2008
+M21,Russia,Bolshoy Lyakhovsk(i)y Isl.,LDR-P73,73.21,143.60,OxA 19609,58000,infinite,,EU153451,Gilbert et al. 2008
+M22,Russia,Novosibirsk Islands N-E Siberia,LDR-P74,73.64,142.67,OxA 17111,50200,900,,EU153452,Gilbert et al. 2007
+M25,Russia,Bolshaya Chukochya River Russia,F-0299,69.79,157.70,OxA 19610,59300,2700,,EU153453,Gilbert et al. 2008
+M26,Russia,Indigirka River N-E Siberia,F-0308,68.60,147.06,OxA 17114,24740,110,28769,EU153454,Gilbert et al. 2007
+M2,Russia,Jarkov mammoth Taimyr Peninsula,,73.32,105.40,,20380,140,24507,EU153449,Gilbert et al. 2007
+M3,Russia,Fishhook mammoth Taimyr Peninsula,,74.15,99.59,,20620,70,24833,EU153455,Gilbert et al. 2007
+M4,Russia,unknown; possibly Northern Yakutia (about 66 to 76N 106-160E),,,,OxA 17098,18545,70,22422,EU153456,Gilbert et al. 2007
+M5,Russia,unknown; possibly Northern Yakutia (about 66 to 76N 106- 160E),,,,,,,,EU153457,Giltert et al. 2007
+M8,Russia,Dima mammoth  Magadan Region,,62.67,147.93,OxA 17102,46900,700,46962,EU153458,Gilbert et al. 2007
+NC007596,Russia,Berelyokh,,71.00,145.00,KIA 25289,12170,50,14056,NC007596,Krause et al. 2006
+Rogaev,Russia,Enmynveem,,68.17,165.93,,32750,1000,37068,DQ316067,Rogaev et al. 2006

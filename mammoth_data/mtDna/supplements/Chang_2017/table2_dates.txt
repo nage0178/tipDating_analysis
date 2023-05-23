@@ -1,0 +1,57 @@
+ID,Region,Location,Museum_Number,Latitude,Longitude,Radiocarbon_Number,14C_date,Sigma,intCal13_Median,Radiocarbon_Date_Reference,GenBank_Acc.
+10643,Russia,Wrangel Island,ILC.08(10643),71.00,179.00,OxA 11841,25890,140,30131,Barnes_et al. 2007,KX176750
+10717,Russia,Bolshoy Lyakhovsk(i)y Isl.,BL-O308,73.34,141.31,GIN 10717,43600,1000,47022,Barnes_et al. 2007,KX176751
+10719,Russia,Yakutia Lena Delta Region,Nag-99-O203,72.90,123.35,GIN 10719,30200,400,34261,Barnes_et al. 2007,KX176752
+AlexKrim,Ukraine,Emine Bair Khosar Krim Peninsula,, 44.80,34.29,,,,,,KX176785
+SP1021,Russia,Bykovsky Peninsula,MKh-O438,71.79,129.40,GIN 10245,29400,600,33499,Barnes et al. 2007,KX176753
+SP1022,Russia,Bykovsky Peninsula,MKh-O435,71.79,129.40,CAMS 158460/ GIN 10242,12845,50,15312,This study,KX176754
+SP1144,Russia,Strashnaya cave Altai,,51.08,83.03,CAMS 158463,45700,infinite,,This study,KX176767
+SP1145,Russia,Ust Kanskaya-Cave 4km southeast of village Ust-Kan, on the right bank of the Tcharysh river (Tschrysch river). On the Beliy Kamen (White Stone Mountain) Altai.,,50.92,84.78,,,,,,KX176768
+SP1349,Russia,Bolshaya Kolopatkaya river Kolyma Lowland Yakutia Sakha Siberia Russia Very close to Cherskii at a small river called Big grouse river.,,68.733,161.383,KIA 27805,42960,1750,46623,Roempler et al. 2006,KX176755
+SP1414,Germany,Siegsdorf Germany,,47.82,12.64,OxA-30164/KIA 14407,>46200/45180,+1130/-990,,Rosendahl et al. 2005 (KIA date),KX176769
+
+SP1419,Russia,Mammontoviy Klyk Olenek-Anabar Reg. Siberia,MaK-O101,73.61,117.13,CAMS 158459,17640,80,21334,This study,KX176756
+SP1420,Russia,Oyagossky Yar Siberia,NS-OgK-O271,72.68,143.52,KIA-27803,40700,+2110/-1670,44773,Rompler et al. 2006,KX176757
+SP1421,Russia,Bykovsky Peninsula Siberia,MKh-O468,71.81,129.35,KIA-27804,28720,+540/-500,32749,Rompler et al. 2006,KX176758
+SP1422,Russia,Bolshoy Lyakhovskiy Isl. Siberia,BL-O600-Z,73.32,141.37,,,,,,KX176759
+SP1584,Russia,Wrangel Island,LabNo 811,71.28,-178.89,OxA-30170,28690,290,32765,This study,
+SP167,Germany,Herne West Germany,,51.54,7.20,,,,,,KX176770
+SP1781,China,Hongqi site near Harbin river bed (2nd site) Heilongjiang Province China,,45.74,126.66,,,,,,,
+SP1785,China,Yong an chun site near Harbin river bed (1st site) Heilongjiang Province China,,45.74,126.66,OxA-30165,>50200,,,This study,KX176771
+SP2013,Europe,North Sea trenched 20/08/2007,,56.51,3.52,,,,,,KX176772
+SP2014,Europe,North Sea trenched 28/07/2007,,56.51,3.52,OxA-30167,40100,1200,43960,This study,KX176773
+SP2015,Europe,North Sea trenched 28/08/2007,,56.51,3.52,OxA-30168,>44800,,,This study,KX176774
+SP2016,Europe,North Sea trenched 28/07/2007,,56.51,3.52,CAMS 158600,,,,This study,KX176775
+SP2017,Europe,North Sea trenched 27/08/2007,,56.51,3.52,OxA-30169,>45000,,,This study,KX176776
+SP2218,Russia,Wrangel Island,DM 13,71.28,-178.89,,,,,,KX176760
+SP2220,Russia,Lemming River in the north of the Wrangel Island,,71.30,-179.50,OxA-30171,7306,36,8106,This study,KX176761
+SP2222,Russia,Wrangel Island,DM 18,71.28,-178.89,CAMS 158465,4115,30,4641,This study,KX176762
+SP2223,Russia,Femur Station 10 (left) Wrangel Island,DM 8,71.28,-178.89,OxA-30172/30173,6891/6876,35/34,7720/7705,This study,KX176763
+SP2225,Russia,Niesv. River IV Wrangel Island,DM 32,71.28,-178.89,OxA-30174,6647,35,7529,This study,KX176764
+SP2283,Germany,Saulgau Germany,,48.01,9.50,HV 25826,25025,175,29068,This study,KX176777
+
+SP2284,Germany,Schwenningen Germany,,48.06,8.50,OxA-30179,>45400,,,This study,KX176778
+SP2293,Belgium,Belgium,L212,50.50,4.47,CAMS 158464,,,,This study,KX176779
+SP2299,Spain,Spain,AAL/68-59.973,40.46,-3.75,,,,,,,
+SP2300,Spain,Spain,AAL/68-60568-1,40.46,-3.75,,,,,,,
+SP2303,Germany,Dresden-Prohlis Germany,SaQ204,51.00,13.79,OxA-30175,26360,220,30646,This study,KX176780
+SP2304,Germany,Dresden Germany,SaQ431,51.05,13.74,OxA-30176,20390,120,24511,This study,KX176781
+SP2305,Germany,Pima Germany,SaQ18,50.96,13.97,OxA-30137,39000,1000,43057,This study,KX176782
+SP2307,Germany,Gollwitz Poel Island Germany,,54.02,11.48,KIA 35747/OxA-30177,23900/25160,130/210,27943/29208,Sommer & Benecke 2009,KX176783
+SP2308,Germany,Schieritz/Lommatzsch Germany,SaQ746,51.20,13.39,OxA-30178,27410,250,31278,This study,KX176784
+SP2386,Russia,Malta Russia,n.a,52.84,103.52,,,,,,KX176786
+SP2387,Russia,Malta Russia,n.a,52.84,103.52,,,,,,KX176787
+SP2389,Russia,Malta Russia,n.a,52.84,103.52,,,,,,KX176788
+SP2401,Russia,Kostenki (Kostyonki?),32572 (3),51.38,39.05,,,,,,KX176789
+SP2402,Russia,Kostenk, 32572 (4),51.38,39.05,,,,,,,
+SP2411,Russia,Secrets Cave M. Ural,31615 (2),59.42,57.75,,,,,,KX176790
+SP2412,Russia,Secrets Cave M. Ural,31615 (3),59.42,57.75,,,,,,KX176791
+SP2415,Russia,Secrets Cave M. Ural,31615 (9),59.42,57.75,,,,,,KX176792
+SP2416,Russia,Medvezhiya Cave N. Ural,34760,62.00,58.73,,,,,,KX176793
+SP2453,Ukraine,Dnepr River Ukraine,Collected 1963,51.71,30.59,,,,,,KX176794
+SP317,United States,Alaska,,64.20,-149.49,,,,,,,
+SP738,Russia,Lugovskoya Russia (Lugovskaya ul.?),,51.72,38.20,,,,,,,,
+SP739,Russia,Lugovskoya Russia,,51.72,38.20,,,,,,,
+SP741,Russia,Shestakova Russia,,58.47,68.47,,,,,,KX176765
+SP743,Russia,Kochegur (near Shestakova Russia),,58.47,68.47,,,,,,
+SP744,Russia,Kochegur (near Shestakova Russia),,58.47,68.47,,,,,,KX176766

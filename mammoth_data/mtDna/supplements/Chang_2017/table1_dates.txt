@@ -1,0 +1,11 @@
+ID,Region,Location,Museum Number,Latitude,Longitude,Radiocarbon Number,14C date,Sigma,intCal13 Median,Radiocarbon Date Reference,GenBank Acc.
+10235,Russia,Bykovsky Peninsula,MKh-O621,73.00,128.50,GIN 10235,19200,200,23138,Barnes_et al. 2007,KX176795
+10236,Russia,Bykovsky Peninsula,MKh-O422,71.79,129.40,GIN 10236,20200,100,24269,Barnes_et al. 2007,KX176796
+10244,Russia,Bykovsky Peninsula,Mkh-O433,71.79,129.40,GIN 10244,30300,600,34376,Barnes_et al. 2007,KX176797
+10247,Russia,Bykovsky Peninsula,MKh-O429,71.79,129.40,GIN 10247,28900,200,33101,Barnes_et al. 2007,KX176798
+10261,Russia,Bykovsky Peninsula,MKh-O533,71.79,129.40,GIN 10261,34000,500,38456,Barnes_et al. 2007,KX176799
+10264,Russia,Bykovsky Peninsula,MKh-O381,71.79,129.40,GIN 10264,24300,200,28332,Barnes_et al. 2007,KX176800
+10643,Russia,Wrangel Island,ILC.08(10643),71.00,179.00,OxA 11841,25890,140,30131,Barnes_et al. 2007,KX176750
+10659,Russia,Bolshoy Lyakhovsk(i)y Isl.,BL-O865,73.33,141.40,GIN 10659,32500,500,36571,Barnes_et al. 2007,KX176801
+10703,Russia,Bolshoy Lyakhovsk(i)y Isl.,BL-O585,73.34,141.31,GIN 10703,40200,900,43927,Barnes_et al. 2007,KX176802
+11028,Russia,Bolshoy Lyakhovsk(i)y Isl.,ILC.04(11028),74.00,138.00,OxA 11748,36610,360,41233,Barnes_et al. 2007,KX176803
