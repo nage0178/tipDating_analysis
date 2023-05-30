@@ -18,8 +18,6 @@ do
 	sed -i 's/nsample = 400000/nsample = 600000/g' ${dir}_1/inference.ctl
 	sed -i 's/nsample = 400000/nsample = 600000/g' ${dir}_2/inference.ctl
 	
-	echo checkpoint = 160000 400000 >> ${dir}_1/inference.ctl
-	echo checkpoint = 160000 400000 >> ${dir}_2/inference.ctl
 
 done
 
