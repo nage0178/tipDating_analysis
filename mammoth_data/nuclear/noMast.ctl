@@ -26,10 +26,9 @@ nloci = 347
 
 # do not remove sites with ambiguity data
 cleandata = 0
-locusrate = 3 10 10000000000
+locusrate = 3 5 10000000000
 
 thetaprior = gamma 2 2000 # gamma(a, b) for theta (estimate theta)
-#ANNA UPDATE ROOT AGE PRIOR
 tauprior = gamma 7 1000 # gamma(a, b) for root tau & Dirichlet(a) for other tau's
 
 # finetune for GBtj, GBspr, theta, tau, mix, locusrate, seqerr

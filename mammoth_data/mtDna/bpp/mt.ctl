@@ -1,4 +1,4 @@
-seed =  1
+seed = 1
 
 seqfile = ../mtDna.fa
 Imapfile = ../map_species.txt
