@@ -1,6 +1,7 @@
 #!/bin/bash
 
 maxReps=3000
+./checkConvergence.sh
 Rscript checkConvergence.R > notConverged
 
 cat 1_1/mcmc.txt > allMCMC.txt
