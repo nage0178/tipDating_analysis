@@ -29,10 +29,17 @@ do
 					do
 					cd ${seqs}_${reps}_${theta}_1
 
-					means=$(grep mean output | tail -n 1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
-					HPDlow=$(grep HPD output | head -1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
-					HPDhigh=$(grep HPD output | tail -n 1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
-					echo ${tree},${dir},${theta},${seqs},${reps}${means}${HPDlow}${HPDhigh} >> ../../../../mt.csv
+                                        cur=$(pwd)
+                                        cur2=${cur::-2}
+                                        found=$(grep -w $cur2 ~/tipDating_analysis/simulations/notConvergeFilter2)
+
+                                        if [ -z $found ]
+                                        then
+						means=$(grep mean output | tail -n 1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
+						HPDlow=$(grep HPD output | head -1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
+						HPDhigh=$(grep HPD output | tail -n 1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
+						echo ${tree},${dir},${theta},${seqs},${reps}${means}${HPDlow}${HPDhigh} >> ../../../../mt.csv
+					fi
 
 					cd ../
 				done
