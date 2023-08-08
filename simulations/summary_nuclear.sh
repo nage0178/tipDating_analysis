@@ -9,39 +9,47 @@ echo extinct,dates,loci,theta,rep,${meanslab},${lowlab},${highlab} > nuclear.csv
 for tree in oneExtinct twoExtinct
 do
 
-	cd $tree
+        cd $tree
 
-	for dir in 10000 50000
-	do
-	
-		cd $dir 
-	
-		for loci in 10 100 500 2000
-		do 
-			for theta in 0.001 0.0001
-			do
-				cd ${loci}_${theta}
-	
-				for ((reps=1;reps<=${maxReps};reps++));
-				do 
-	
-					# Simulation files
-					cd ${reps}_1
+        for dir in 10000 50000
+        do
 
-					means=$(grep mean output | tail -n 1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
-					HPDlow=$(grep HPD output | head -1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
-					HPDhigh=$(grep HPD output | tail -n 1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
-					echo ${tree},${dir},${loci},${theta},${reps}${means}${HPDlow}${HPDhigh} >> ../../../../nuclear.csv
+                cd $dir
 
+                for loci in 10 100 500 2000
+                do
+                        for theta in 0.001 0.0001
+                        do
+                                cd ${loci}_${theta}
 
-					cd ../
-				done
-				cd ../
-			done
-	
-		done
-		cd ../
+                                for ((reps=1;reps<=${maxReps};reps++));
+                                do
 
-	done
-	cd ../
+                                        # Simulation files
+                                        cd ${reps}_1
+
+                                        cur=$(pwd)
+                                        cur2=${cur::-2}
+                                        found=$(grep -w $cur2 ~/tipDating_analysis/simulations/notConvergeFullPath)
+                                        #echo $cur $cur2 $found
+                                        if [ -z $found ]
+                                        then
+
+                                                means=$(grep mean output | tail -n 1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
+                                                HPDlow=$(grep HPD output | head -1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
+                                                HPDhigh=$(grep HPD output | tail -n 1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
+                                                echo ${tree},${dir},${loci},${theta},${reps}${means}${HPDlow}${HPDhigh} >> ../../../../nuclear.csv
+                                        fi
+
+                                        cd ../
+                                done
+                                cd ../
+                        done
+
+                done
+                cd ../
+
+        done
+        cd ../
 done
+

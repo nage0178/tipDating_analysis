@@ -20,10 +20,20 @@ do
 			# Simulation files
 			cd ${reps}_${theta}_1
 
-			means=$(grep mean output | tail -n 1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
-			HPDlow=$(grep HPD output | head -1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
-			HPDhigh=$(grep HPD output | tail -n 1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
-			echo ${loci},${theta},${reps}${means}${HPDlow}${HPDhigh} >> ../../pop.csv
+			cur=$(pwd)
+			cur2=${cur::-2}
+			found=$(grep -w $cur2 ~/tipDating_analysis/simulations/notConvergeFullPath)
+			#echo $cur $cur2 $found
+			if [ -z $found ]
+			then
+				echo converge
+				means=$(grep mean output | tail -n 1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
+				HPDlow=$(grep HPD output | head -1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
+				HPDhigh=$(grep HPD output | tail -n 1 |awk '{$1=""; $NF=""}1'|sed 's/ /,/g'| sed 's/,$//')
+				echo ${loci},${theta},${reps}${means}${HPDlow}${HPDhigh} >> ../../pop.csv
+			else
+				echo not Converge
+			fi
 
 			cd ../
 		done
