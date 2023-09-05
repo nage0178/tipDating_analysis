@@ -236,7 +236,7 @@ nuclearComb$model <- as.factor(nuclearComb$model)
 nuclear6AllSub <- nuclearComb[as.logical((nuclearComb$theta == 0.0001) * (nuclearComb$dates == 50000) ), ]
 
 
-byLociThetaA <- aggregate(nuclear6AllSub$M_theta_1A, list(nuclear6AllSub$loci, nuclear6AllSub$model), FUN=mean)
+byLociThetaA <- aggregate(as.numeric(nuclear6AllSub$M_theta_1A), list(nuclear6AllSub$loci, nuclear6AllSub$model), FUN=mean)
 byLociThetaA <- cbind(byLociThetaA, aggregate(nuclear6AllSub$H_theta_1A, list(nuclear6AllSub$loci,  nuclear6AllSub$model), FUN=mean)[,3], aggregate(nuclear6AllSub$L_theta_1A , list(nuclear6AllSub$loci,  nuclear6AllSub$model), FUN=mean)[,3])
 colnames(byLociThetaA) <- c( "loci", "model", "means", "H_HPD", "L_HPD")
 
@@ -276,14 +276,51 @@ colnames(byLociTauAB) <- c("loci", "model", "mean", "H_HPD", "L_HPD", "node", "t
 colnames(byLociTauCD) <- c("loci",  "model", "mean", "H_HPD", "L_HPD", "node", "truth")
 colnames(byLociTauABCD) <- c("loci",  "model", "mean", "H_HPD", "L_HPD", "node", "truth")
 byLoci <- rbind(byLociTauAB, byLociTauCD, byLociTauABCD)
-
-popPlot <- byLoci %>% 
+byLoci <- cbind(byLoci, byLoci$loci)
+colnames(byLoci)[dim(byLoci)[2]] <- "xaxis"
+byLoci$xaxis[which(byLoci$xaxis ==10)] = 1
+byLoci$xaxis[which(byLoci$xaxis ==100)] = 2
+byLoci$xaxis[which(byLoci$xaxis ==500)] = 3
+byLoci$xaxis[which(byLoci$xaxis ==2000)] = 4
+popPlot 
+p<- byLoci %>% 
   mutate(node = factor(node, levels = c("tau_ABCD","tau_CD", "tau_AB"), labels = c(expression(tau[ABCD]^Delta), expression(tau[CD]^Delta), expression(tau[AB]^Delta)) )) %>%
-  ggplot( aes(y = mean, x = loci))  + geom_point() + facet_grid(factor(node)~factor(model), labeller = label_parsed)+
-  geom_errorbar(aes (ymin=L_HPD, ymax =H_HPD)) +theme_classic()  +geom_line(aes(y = truth), lty= 2) +ylab("node age") + xlab ("number of loci")
+  ggplot( aes(y = mean, x = (xaxis)), xlabs = c("10", "100", "500", "2000"))  + geom_point() + facet_grid(factor(node)~factor(model), labeller = label_parsed, scales="free_y")+
+  geom_errorbar(aes (ymin=L_HPD, ymax =H_HPD)) +
+
+  theme_classic() + theme(axis.text.x=element_text(colour = "black"), 
+                          #strip.placement = "outside", 
+                          #strip.background.x=element_rect(color = "white",  fill=NULL), 
+                          strip.background.y=element_rect(color = NA),) + 
+  
+#theme(panel.spacing = unit(0, "mm"),                       # remove spacing between facets
+ #                         strip.background = element_blank()
+    #strip.background = element_blank()#, 
+                          #panel.border = element_rect(colour = "black", fill = NA)
+     #                     ) +
+  
+  geom_line(aes(y = truth), lty= 2) +ylab("node age") + xlab ("number of loci") +
+  scale_x_continuous(breaks = c(1, 2, 3, 4), 
+                     labels=c("1" = "10", "2" = "100", "3" = "500", "4" = "2000"))
+
+library(grid)
+q <- ggplotGrob(p)
+lg <- linesGrob(x=unit(c(0,0),"npc"), y=unit(c(0,1),"npc"), 
+                gp=gpar(col="black", lwd=2.5))
+
+for (k in grep("strip-r",q$layout$name)) {
+  q$grobs[[k]]$grobs[[1]]$children[[1]] <- lg
+}
+lg2 <- linesGrob(x=unit(c(0,1),"npc"), y=unit(c(0,0),"npc"), 
+                 gp=gpar(col="black", lwd=2.5))
+
+for (k in grep("strip-t",q$layout$name)) {
+  q$grobs[[k]]$grobs[[1]]$children[[1]] <- lg2
+}
+popPlot <- q
 
 pdf("~/tipDating/figs/popTau.pdf", width = 5, height = 5)
-popPlot
+grid.draw(q)
 dev.off()
 
 byLociThetaA <- aggregate(subPop$M_theta_1A, list(subPop$loci, subPop$model), FUN=mean)
@@ -379,14 +416,50 @@ colnames(byseqsTauCD) <- c("seqs",  "model", "mean", "H_HPD", "L_HPD", "node", "
 colnames(byseqsTauABCD) <- c("seqs",  "model", "mean", "H_HPD", "L_HPD", "node", "truth")
 byseqs <- rbind(byseqsTauAB, byseqsTauCD, byseqsTauABCD)
 
-mtPlot <- byseqs %>% 
+byseqs <- cbind(byseqs, byseqs$seqs)
+
+colnames(byseqs)[dim(byseqs)[2]] <- "xaxis"
+byseqs$xaxis[which(byseqs$xaxis ==10)] = 1
+byseqs$xaxis[which(byseqs$xaxis ==20)] = 2
+byseqs$xaxis[which(byseqs$xaxis ==100)] = 3
+
+p <- byseqs %>% 
   mutate(node = factor(node, levels = c("tau_ABCD", "tau_AB",  "tau_CD"), labels = c( expression(tau[ABCD]^Delta), expression(tau[AB]^Delta), expression(tau[CD]^Delta)) )) %>%
-  ggplot( aes(y = mean, x = seqs))  + geom_point() + facet_grid(factor(node)~factor(model), labeller = label_parsed)+
-  geom_errorbar(aes (ymin=L_HPD, ymax =H_HPD)) +theme_classic()  +geom_line(aes(y = truth), lty= 2) +ylab("node age") + xlab ("number of samples")
+  ggplot( aes(y = mean, x = xaxis), xlabs = c("10", "20", "100"))  + geom_point() + facet_grid(factor(node)~factor(model), labeller = label_parsed)+
+  geom_errorbar(aes (ymin=L_HPD, ymax =H_HPD)) +theme_classic()  +
+  geom_line(aes(y = truth), lty= 2) +ylab("node age") + 
+  xlab ("number of samples")+scale_x_continuous(breaks = c(1, 2, 3), labels=c("1" = "10", "2" = "20", "3" = "100"))
+
+library(grid)
+q <- ggplotGrob(p)
+lg <- linesGrob(x=unit(c(0,0),"npc"), y=unit(c(0,1),"npc"), 
+                gp=gpar(col="black", lwd=2.5))
+
+for (k in grep("strip-r",q$layout$name)) {
+  q$grobs[[k]]$grobs[[1]]$children[[1]] <- lg
+}
+lg2 <- linesGrob(x=unit(c(0,1),"npc"), y=unit(c(0,0),"npc"), 
+                 gp=gpar(col="black", lwd=2.5))
+
+for (k in grep("strip-t",q$layout$name)) {
+  q$grobs[[k]]$grobs[[1]]$children[[1]] <- lg2
+}
+
+mtPlot <- q
+
+#popPlot <- grid.draw(q)
+figure <- ggarrange(popPlot, mtPlot, labels = c("a", "b"),
+                    nrow =1, ncol = 2)
+
 
 pdf("~/tipDating/figs/mtTau.pdf", width = 5, height = 5)
 mtPlot
 dev.off()
+
+pdf("~/tipDating/figs/contemporaryDates.pdf", width = 10, height = 5)
+figure
+dev.off()
+
 
 #####
 # Plotting effect of simulation design on mu for mt 
@@ -431,3 +504,52 @@ thetaMt <- ggplot(mtTheta, aes(y = means, x = samples)) + geom_point() + facet_g
 pdf("~/tipDating/figs/thetaMt.pdf", width = 5, height = 4)
 thetaMt
 dev.off()
+###
+#Coverage
+#Mt coverage
+mtD <- read.csv("~/tipDating_analysis/simulations/mt.csv")
+coverageMt_tau_ABCD <- (mtD$L_r_tau_5ABCD <10^7 )*(mtD$H_r_tau_5ABCD > 10^7 )
+sum(coverageMt_tau_ABCD) / length(coverageMt_tau_ABCD)
+
+coverageMt_tau_AB <- (mtD$L_r_tau_6AB < 7* 10^6 )*(mtD$H_r_tau_6AB > 7* 10^6 )
+sum(coverageMt_tau_AB) / length(coverageMt_tau_AB)
+
+coverageMt_tau_CD <- (mtD$L_r_tau_7CD < 4* 10^6 )*(mtD$H_r_tau_7CD > 4* 10^6 )
+sum(coverageMt_tau_CD) / length(coverageMt_tau_CD)
+
+coverageMt_mu <- (mtD$L_mu_bar < 10^-8 )*(mtD$H_mu_bar > 10^-8 )
+sum(coverageMt_mu) / length(coverageMt_mu)
+
+#pop coverage
+popD <- read.csv("~/tipDating_analysis/simulations/popDiverg/pop.csv")
+popD <- popD[which(popD$loci ==2000),]
+coveragepop_tau_ABCD <- (popD$L_r_tau_5ABCD < 20000 )*(popD$H_r_tau_5ABCD > 20000 )
+sum(coveragepop_tau_ABCD) / length(coveragepop_tau_ABCD)
+
+coveragepop_tau_AB <- (popD$L_r_tau_6AB < 5000 )*(popD$H_r_tau_6AB > 5000 )
+sum(coveragepop_tau_AB) / length(coveragepop_tau_AB)
+
+coveragepop_tau_CD <- (popD$L_r_tau_7CD < 13000 )*(popD$H_r_tau_7CD > 13000 )
+sum(coveragepop_tau_CD) / length(coveragepop_tau_CD)
+
+coveragepop_mu <- (popD$L_mu_bar < 10^-9 )*(popD$H_mu_bar > 10^-9 )
+sum(coveragepop_mu) / length(coveragepop_mu)
+
+#nuclear coverage
+
+Nuc6 <- read.csv("~/tipDating_analysis/simulations/6samples/nuclear.csv")
+Nuc3 <- read.csv("~/tipDating_analysis/simulations/nuclear.csv")
+nuc <- rbind(Nuc6, Nuc3)
+NucD <- nuc[which(nuc$loci == 2000), ]
+#NucD <- NucD[!is.na((NucD$H_mu_bar)), ]
+coverageNuc_tau_ABCD <- (NucD$L_r_tau_5ABCD <10^7 )*(NucD$H_r_tau_5ABCD > 10^7 )
+sum(coverageNuc_tau_ABCD) / length(coverageNuc_tau_ABCD)
+
+coverageNuc_tau_AB <- (NucD$L_r_tau_6AB < 7* 10^6 )*(NucD$H_r_tau_6AB > 7* 10^6 )
+sum(coverageNuc_tau_AB) / length(coverageNuc_tau_AB)
+
+coverageNuc_tau_CD <- (NucD$L_r_tau_7CD < 4* 10^6 )*(NucD$H_r_tau_7CD > 4* 10^6 )
+sum(coverageNuc_tau_CD) / length(coverageNuc_tau_CD)
+
+coverageNuc_mu <- (NucD$L_mu_bar < 10^-9 )*(NucD$H_mu_bar > 10^-9 )
+sum(coverageNuc_mu) / length(coverageNuc_mu)
