@@ -19,6 +19,7 @@ species&tree = 4  Elephas_maximus Mammuthus_primigenius Loxodonta_africana Loxod
 # unphased data for all 4 populations
 phase =   0  0  0  0
 
+model = HKY
 # use sequence likelihood
 usedata = 1
 alphaprior = 1 1 4
@@ -36,7 +37,8 @@ tauprior = gamma 45 1000 # gamma(a, b) for root tau & Dirichlet(a) for other tau
 finetune =  1: 5 0.001 0.001  0.001 0.3 0.33 1.0  
 
 # MCMC samples, locusrate, heredityscalars, Genetrees
-print = 1 0 0 0   * 
+*print = 1 0 0 0   * 
+print = 1 0 0 0 1
 burnin = 160000
 sampfreq = 4
 nsample = 400000
