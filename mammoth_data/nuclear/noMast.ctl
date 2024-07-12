@@ -29,7 +29,7 @@ cleandata = 0
 locusrate = 3 5 10000000000
 
 thetaprior = gamma 2 2000 # gamma(a, b) for theta (estimate theta)
-tauprior = gamma 7 1000 # gamma(a, b) for root tau & Dirichlet(a) for other tau's
+tauprior = gamma 3.5 1000 # gamma(a, b) for root tau & Dirichlet(a) for other tau's
 
 # finetune for GBtj, GBspr, theta, tau, mix, locusrate, seqerr
 finetune =  1: 5 0.001 0.001  0.001 0.3 0.33 1.0  
